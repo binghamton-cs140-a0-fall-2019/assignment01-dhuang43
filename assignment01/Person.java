@@ -52,7 +52,7 @@ public class Person {
 	}
 	/**
 	 * 
-	 * @return
+	 * @returnDateAndPlaceOfBirth object1 = new DateAndPlaceOfBirth(1999, 3, 18, "New York City", "New York", "USA");
 	 */
 	public String getSSN() {
 // either
@@ -62,6 +62,17 @@ public class Person {
 		return String.format("%03d-%02d-%04d", ssn/1000000,ssn%1000000/10000, ssn%10000); 
 
 	}
+	public DateAndPlaceOfBirth getPlaceDob() {
+		return placeDob;
+	}
+	public StreetUSAddress getAddress() {
+		return address;
+	}
+	@Override
+	public String toString() {
+		return String.format("%s, %s, %s\n%s\n%s", firstNames, lastNames, "(" + ssn + ")", placeDob, address);
+	}
+		
 // TODO provide the getter methods for placeDob and address 
 // TODO Override the public String toString() method that is similar to the 
 // toString of the StreetUSAddress class and will print a person as:
